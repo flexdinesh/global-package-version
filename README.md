@@ -1,4 +1,7 @@
-Module to retrieve the current version of the npm package and set it as a
-global variable to be accessed in the browser console.
+Global Package version [![Build Status](https://travis-ci.org/flexdinesh/global-package-version.svg?branch=master)](https://travis-ci.org/flexdinesh/global-package-version)
+
+
+<to be updated>
+
 
 #### Note: Not published to npm repo as this won't work with webpack dynamic imports
