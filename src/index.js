@@ -1,36 +1,29 @@
 /* global window */
-/* eslint-disable no-underscore-dangle,
-   global-require,
-   import/no-extraneous-dependencies,
-   import/no-dynamic-require
-*/
 
-const globalizeVersion = (packageJson) => {
-  const convertedPackageName = typeof packageJson.name === 'string' ? packageJson.name.replace(/-/g, '_') : packageJson.name;
-  const packageVersion = packageJson.version;
+const assignToGlobal = (packageName, packageVersion) => {
   if (typeof window !== 'undefined' && window) {
     window.packageVersion = window.packageVersion || {};
-    window.packageVersion[convertedPackageName] = packageVersion;
-  } else if (typeof global !== 'undefined' && global) {
+    window.packageVersion[packageName] = packageVersion;
+  }
+  if (typeof global !== 'undefined' && global) {
     global.packageVersion = global.packageVersion || {};
-    global.packageVersion[convertedPackageName] = packageVersion;
+    global.packageVersion[packageName] = packageVersion;
   }
 };
 
-const globalizePackageVersion = () => {
-  // dynamic require won't work
-  // const path = `${process.cwd()}/package.json`;
-  const packageJson = require('acorn/package.json');
-  globalizeVersion(packageJson);
+const globalPackageVersion = (packageJson) => {
+  let convertedPackageName;
+  let packageVersion;
+
+  if (packageJson && packageJson.name && packageJson.version) {
+    convertedPackageName = typeof packageJson.name === 'string' ? packageJson.name.replace(/-/g, '_') : packageJson.name;
+    packageVersion = packageJson.version;
+  } else {
+    convertedPackageName = 'package_not_found';
+    packageVersion = 'package_not_found';
+  }
+  assignToGlobal(convertedPackageName, packageVersion);
 };
 
-const globalizeCurrentPackageVersion = () => {
-  const packageJson = require(`${process.cwd()}/package.json`);
-  globalizeVersion(packageJson);
-};
 
-
-export {
-  globalizePackageVersion,
-  globalizeCurrentPackageVersion
- };
+export default globalPackageVersion;

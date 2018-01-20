@@ -1,6 +1,7 @@
+/* eslint-disable import/no-extraneous-dependencies, no-console */
 const globalPackageVersion = require('../lib');
 
-globalPackageVersion.globalizeCurrentPackageVersion();
-globalPackageVersion.globalizePackageVersion();
+globalPackageVersion(require('../package.json'));
+globalPackageVersion(require('babel-cli/package.json'));
 
 console.log(global.packageVersion);
