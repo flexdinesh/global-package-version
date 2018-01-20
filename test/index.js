@@ -34,4 +34,9 @@ describe('Global Package Version', () => {
     assert(global.packageVersion.align_text === require('align-text/package.json').version, 'replace hyphens with underscore didn\'t work :(');
   });
 
+  it('should set custom variable name in global/window object', () => {
+    globalPackageVersion(require('../package.json'), {wrapperVariableName: 'myOwnVar'});
+    assert(global.myOwnVar.global_package_version === require('../package.json').version, 'custom variable name didn\'t work :(');
+  });
+
 });

@@ -1,5 +1,7 @@
-const ex = require('./example');
+const globalExample = require('./global-example');
+const customNameExample = require('./custom-name-example');
 
 module.exports = {
-  ex
+  globalExample,
+  customNameExample
 };

@@ -1,17 +1,18 @@
 /* global window */
 
-const assignToGlobal = (packageName, packageVersion) => {
+const assignToGlobal = (packageName, packageVersion, options) => {
+  const varName = options.wrapperVariableName ? options.wrapperVariableName : 'packageVersion';
   if (typeof window !== 'undefined' && window) {
-    window.packageVersion = window.packageVersion || {};
-    window.packageVersion[packageName] = packageVersion;
+    window[varName] = window[varName] || {};
+    window[varName][packageName] = packageVersion;
   }
   if (typeof global !== 'undefined' && global) {
-    global.packageVersion = global.packageVersion || {};
-    global.packageVersion[packageName] = packageVersion;
+    global[varName] = global[varName] || {};
+    global[varName][packageName] = packageVersion;
   }
 };
 
-const globalPackageVersion = (packageJson) => {
+const globalPackageVersion = (packageJson, options = {}) => {
   let convertedPackageName;
   let packageVersion;
 
@@ -22,7 +23,7 @@ const globalPackageVersion = (packageJson) => {
     convertedPackageName = 'package_not_found';
     packageVersion = 'package_not_found';
   }
-  assignToGlobal(convertedPackageName, packageVersion);
+  assignToGlobal(convertedPackageName, packageVersion, options);
 };
 
 
