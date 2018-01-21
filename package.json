@@ -1,6 +1,6 @@
 {
   "name": "global-package-version",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Check version of any package in browser console",
   "main": "./lib/index.js",
   "scripts": {
