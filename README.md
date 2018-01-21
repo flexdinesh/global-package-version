@@ -1,4 +1,8 @@
-# Global Package Version [![Build Status](https://travis-ci.org/flexdinesh/global-package-version.svg?branch=master)](https://travis-ci.org/flexdinesh/global-package-version) [![dependencies Status](https://david-dm.org/flexdinesh/global-package-version/status.svg)](https://david-dm.org/flexdinesh/global-package-version) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+# Global Package Version
+[![Build Status](https://travis-ci.org/flexdinesh/global-package-version.svg?branch=master)](https://travis-ci.org/flexdinesh/global-package-version)
+[![npm version](https://badge.fury.io/js/global-package-version.svg)](https://badge.fury.io/js/global-package-version)
+[![dependencies Status](https://david-dm.org/flexdinesh/global-package-version/status.svg)](https://david-dm.org/flexdinesh/global-package-version)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 Look up the version of one or more npm packages in browser console.
 
