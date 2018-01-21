@@ -29,9 +29,9 @@ describe('Global Package Version', () => {
     assert(global.packageVersion.acorn === require('acorn/package.json').version, 'package version not set in global');
   });
 
-  it('should replace hyphens in package name with underscore', () => {
+  it('should convert hyphen-case package name to camelCase package name', () => {
     globalPackageVersion(require('align-text/package.json'));
-    assert(global.packageVersion.alignText === require('align-text/package.json').version, 'replace hyphens with underscore didn\'t work :(');
+    assert(global.packageVersion.alignText === require('align-text/package.json').version, 'hyphen-case to camelCase didn\'t work :(');
   });
 
   it('should set custom wrapper name in global/window object', () => {
