@@ -2,7 +2,7 @@
 
 Look up the version of one or more npm packages in browser console.
 
-This library exposes the package version in a global variable so it can be accessed anywhere in your code.
+This library sets the package version in global/window variable so it can be accessed anywhere in your code or browser console.
 
 ## Install
 
