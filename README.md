@@ -16,6 +16,7 @@ ES6 style import
 ```js
 import globalPackageVersion from 'global-package-version';
 
+// package name is 'lodash'
 globalPackageVersion(require('lodash/package.json'));
 
 // You can type 'packageVersion' in browser console to check lodash Version
@@ -25,33 +26,33 @@ ES5 style import
 ```js
 var globalPackageVersion = require('global-package-version');
 
-globalPackageVersion(require('lodash/package.json'));
+globalPackageVersion(require('moment/package.json'));
 
 // You can type 'packageVersion' in browser console to check lodash Version
-// => packageVersion = { lodash: '4.7.2'}
+// => packageVersion = { moment: '2.1.0'}
 ```
 
 Pass in **options** param to give custom variable names
 
 ```js
 // wrapper
-globalPackageVersion(require('lodash/package.json'),
+globalPackageVersion(require('trim-right/package.json'),
   { wrapper: 'whichVersion' }
 );
-// => whichVersion = { lodash: '4.7.2'}
+// => whichVersion = { trimRight: '1.2.3'}
 
 // customPackageName
-globalPackageVersion(require('lodash/package.json'),
-  { customPackageName: 'lodashLibrary' }
+globalPackageVersion(require('trim-right/package.json'),
+  { customPackageName: 'trimLibrary' }
 );
-// => packageVersion = { lodashLibrary: '4.7.2'}
+// => packageVersion = { trimLibrary: '4.7.2'}
 
 // both wrapper and customPackageName
-globalPackageVersion(require('lodash/package.json'), {
+globalPackageVersion(require('trim-right/package.json'), {
     wrapper: 'whichVersion',
-    customPackageName: 'lodashLibrary' }
+    customPackageName: 'trimLibrary' }
 );
-// => whichVersion = { lodashLibrary: '4.7.2'}
+// => whichVersion = { trimLibrary: '4.7.2'}
 ```
 
 Multiple package versions can be set to global
