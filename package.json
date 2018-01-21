@@ -1,6 +1,6 @@
 {
   "name": "global-package-version",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Check npm package version in browser console",
   "main": "./lib/index.js",
   "scripts": {
