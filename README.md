@@ -14,7 +14,6 @@ $ npm install --save global-package-version
 
 ES6 style import
 ```js
-/* ES6 import */
 import globalPackageVersion from 'global-package-version';
 
 globalPackageVersion(require('lodash/package.json'));
@@ -35,24 +34,20 @@ globalPackageVersion(require('lodash/package.json'));
 Pass in **options** param to give custom variable names
 
 ```js
-/* wrapper */
-globalPackageVersion(
-  require('lodash/package.json'),
+// wrapper
+globalPackageVersion(require('lodash/package.json'),
   { wrapper: 'whatVersion' }
 );
 // => whatVersion = { lodash: '4.7.2'}
 
-/* customPackageName */
-globalPackageVersion(
-  require('lodash/package.json'),
+// customPackageName
+globalPackageVersion(require('lodash/package.json'),
   { customPackageName: 'lodashLibrary' }
 );
 // => packageVersion = { lodashLibrary: '4.7.2'}
 
-/* Both wrapper and customPackageName */
-globalPackageVersion(
-  require('lodash/package.json'),
-  {
+// both wrapper and customPackageName
+globalPackageVersion(require('lodash/package.json'), {
     wrapper: 'whatVersion',
     customPackageName: 'lodashLibrary' }
 );
@@ -62,7 +57,7 @@ globalPackageVersion(
 Multiple package versions can be set to global
 
 ```js
-/* Should require each package separately */
+// should require each package separately
 globalPackageVersion(require('lodash/package.json'));
 globalPackageVersion(require('left-pad/package.json'));
 /*
