@@ -14,7 +14,7 @@ describe('Global Package Version', () => {
 
   it('should set global package version of current project', () => {
     globalPackageVersion(require('../package.json'));
-    assert(global.packageVersion.global_package_version === require('../package.json').version, 'current project package version didn\'t work :(');
+    assert(global.packageVersion.globalPackageVersion === require('../package.json').version, 'current project package version didn\'t work :(');
   });
 
   it('should set version in global when window is not available', () => {
@@ -31,12 +31,17 @@ describe('Global Package Version', () => {
 
   it('should replace hyphens in package name with underscore', () => {
     globalPackageVersion(require('align-text/package.json'));
-    assert(global.packageVersion.align_text === require('align-text/package.json').version, 'replace hyphens with underscore didn\'t work :(');
+    assert(global.packageVersion.alignText === require('align-text/package.json').version, 'replace hyphens with underscore didn\'t work :(');
   });
 
-  it('should set custom variable name in global/window object', () => {
-    globalPackageVersion(require('../package.json'), {wrapperVariableName: 'myOwnVar'});
-    assert(global.myOwnVar.global_package_version === require('../package.json').version, 'custom variable name didn\'t work :(');
+  it('should set custom wrapper name in global/window object', () => {
+    globalPackageVersion(require('../package.json'), {wrapper: 'myOwnVar'});
+    assert(global.myOwnVar.globalPackageVersion === require('../package.json').version, 'custom wrapper name didn\'t work :(');
+  });
+
+  it('should set custom package name in wrapper object', () => {
+    globalPackageVersion(require('../package.json'), {customPackageName: 'myOwnPackageName'});
+    assert(global.packageVersion.myOwnPackageName === require('../package.json').version, 'custom package name didn\'t work :(');
   });
 
 });
