@@ -36,9 +36,9 @@ Pass in **options** param to give custom variable names
 ```js
 // wrapper
 globalPackageVersion(require('lodash/package.json'),
-  { wrapper: 'whatVersion' }
+  { wrapper: 'whichVersion' }
 );
-// => whatVersion = { lodash: '4.7.2'}
+// => whichVersion = { lodash: '4.7.2'}
 
 // customPackageName
 globalPackageVersion(require('lodash/package.json'),
@@ -48,10 +48,10 @@ globalPackageVersion(require('lodash/package.json'),
 
 // both wrapper and customPackageName
 globalPackageVersion(require('lodash/package.json'), {
-    wrapper: 'whatVersion',
+    wrapper: 'whichVersion',
     customPackageName: 'lodashLibrary' }
 );
-// => whatVersion = { lodashLibrary: '4.7.2'}
+// => whichVersion = { lodashLibrary: '4.7.2'}
 ```
 
 Multiple package versions can be set to global
