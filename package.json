@@ -23,11 +23,13 @@
     "url": "git+https://github.com/flexdinesh/global-package-version.git"
   },
   "keywords": [
-    "boilerplate",
     "npm",
     "module",
     "node",
-    "javascript"
+    "javascript",
+    "package json",
+    "package.json",
+    "get package json"
   ],
   "author": "Dineshkumar Pandiyan <flexdinesh@gmail.com>",
   "license": "MIT",
