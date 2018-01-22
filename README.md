@@ -3,6 +3,7 @@
 [![npm version](https://badge.fury.io/js/global-package-version.svg)](https://www.npmjs.com/package/global-package-version)
 [![dependencies Status](https://david-dm.org/flexdinesh/global-package-version/status.svg)](https://david-dm.org/flexdinesh/global-package-version)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![npm](https://img.shields.io/npm/dt/global-package-version.svg)](https://www.npmjs.com/package/global-package-version)
 
 Look up the version of one or more npm packages in browser console.
 
