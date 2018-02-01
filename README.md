@@ -26,7 +26,7 @@ import globalPackageVersion from 'global-package-version';
 var globalPackageVersion = require('global-package-version');
 ```
 
-### NPM Packages
+### NPM packages
 You can check the version of any of your npm packages
 ```js
 // package name is 'lodash'
