@@ -17,26 +17,43 @@ $ npm install --save global-package-version
 
 ## Usage
 
-ES6 style import
+### Import
 ```js
+// ES6 style
 import globalPackageVersion from 'global-package-version';
+// or
+//ES5 style
+var globalPackageVersion = require('global-package-version');
+```
 
+### NPM Packages
+You can check the version of any of your npm packages
+```js
 // package name is 'lodash'
 globalPackageVersion(require('lodash/package.json'));
 
 // You can type 'packageVersion' in browser console to check lodash Version
 // => packageVersion = { lodash: '4.7.2'}
 ```
-ES5 style import
+
+### Your own library
+If you are building a library, you can set the version of your published package and your users will be able to check your package's version in their browser console.
+
+Note: This won't affect/override any of your other variables/methods in your library.
 ```js
-var globalPackageVersion = require('global-package-version');
+// ''../package.json' is the location of your package json
+// libName will be your export
+// example: import libName from 'libname';
+globalPackageVersion(require('../package.json'), {
+  wrapper: 'libName',
+  customPackageName: 'version'
+});
 
-globalPackageVersion(require('moment/package.json'));
-
-// You can type 'packageVersion' in browser console to check lodash Version
-// => packageVersion = { moment: '2.1.0'}
+// Your users can type 'libName.version' in browser console to check your library version
+// => libName.version = '1.7.0'
 ```
 
+### Options
 Pass in **options** param to give custom variable names
 
 ```js

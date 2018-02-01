@@ -1,4 +1,5 @@
 /* global window */
+import { isBrowser, isNode } from 'browser-or-node';
 
 const defaultOptions = {
   wrapper: 'packageVersion',
@@ -14,11 +15,11 @@ const hyphenCaseToCamelCase = (str) => {
 
 const assignToGlobal = (packageName, packageVersion, options) => {
   const wrapper = options.wrapper ? options.wrapper : 'packageVersion';
-  if (typeof window !== 'undefined' && window) {
+  if (isBrowser) {
     window[wrapper] = window[wrapper] || {};
     window[wrapper][packageName] = packageVersion;
   }
-  if (typeof global !== 'undefined' && global) {
+  if (isNode) {
     global[wrapper] = global[wrapper] || {};
     global[wrapper][packageName] = packageVersion;
   }
